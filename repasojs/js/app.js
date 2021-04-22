@@ -73,17 +73,74 @@ let viajando = (pais = 'managua') => {
 
 // console.log(viaje)
 
-//objetos
+//objet literal
 
-const persona = {
-    nombre: 'marlon',
-    edad: 28,
-    viaje: viajando(),
-    nacion: nacionalidad = {
-      pais: 'managua'
-    }
-}
-console.log(persona)
+// const persona = {
+//     nombre: 'marlon',
+//     edad: 28,
+//     viaje: viajando(),
+//     nacion: nacionalidad = {
+//       pais: 'managua'
+//     }
+// }
+// console.log(persona)
 
 //acceder a campos del objeto como una struct
-console.log(persona.nombre)
+// console.log(persona.nombre)
+
+//objeto constructor como clases
+// function tarea(nombre,edad){
+//      this.nombre = nombre,
+//      this.edad=edad
+// }
+
+// //uso de prototy
+
+// tarea.prototype.mostrarinfo = function() {
+//     return `mi nombre es ${this.nombre},y mi edad ${this.edad}`
+// }
+
+
+
+// const  tarea1 = new tarea('marlon',28)
+// const  tarea2 = new tarea('solis',28)
+
+// console.log(tarea1.mostrarinfo())
+
+//destrocturing o forma de como extraer los datos de un objeto
+
+// const aprendiendojs = {
+//     version: {
+//          nueva: 'ES6',
+//          vieja: 'ES5'
+//     },
+//     frameword:  ['reactjs','VUEJS','angularjs']
+// }
+
+// console.log(aprendiendojs)
+// //extraccion version anterior
+// let version = aprendiendojs.version.nueva
+// //console.log(version)
+
+// //nueva forma para extraer datos
+// let {nueva,vieja} = aprendiendojs.version
+// console.log(vieja,nueva)
+
+//object literal enhacement o unir varias variables
+
+const banda ='metalica'
+const genero ='havi metal'
+const cancion = ['dddd','dssss','xxxxx']
+
+//unir forma anterior
+// const metalica={
+//       banda: banda,
+//       genero: genero,
+//       cancion: cancion
+// }
+
+//unir forma actual
+
+const metalica ={banda,genero,cancion}
+
+console.log(metalica)
