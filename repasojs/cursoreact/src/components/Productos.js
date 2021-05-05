@@ -8,7 +8,7 @@ const Productos = ({producto,carrito,guardarcarrito,productos}) => {
 
     const {nombre,precio,id} = producto
 
-    const agregarcompra = () =>{
+    const agregarcompra = (id) =>{
         // console.log('agregando producto ... '+id)
         const producto = productos.filter(producto => producto.id === id)[0]
         guardarcarrito([
@@ -16,14 +16,34 @@ const Productos = ({producto,carrito,guardarcarrito,productos}) => {
             producto
         ])
     }
+
+      const Eliminarproductos =(id)=>{
+          const producto = carrito.filter(producto => producto.id !== id)
+          guardarcarrito(producto)
+      }
+
     return ( 
        <div>
          <h2>{nombre}</h2>
           <p>${precio}</p>
-          <button type="button"
-             onClick = {() => agregarcompra(id)}
-          >Comprar</button>
-       </div>
+          
+            
+            {productos
+            ?
+               (
+                <button type="button"
+                onClick = {() => agregarcompra(id)}
+                >Comprar</button>
+               )
+            :
+              (
+                <button type="button"
+                onClick = {() => Eliminarproductos(id)}
+                >Eliminar</button>
+               )
+            }
+
+        </div>
      );
 }
  
